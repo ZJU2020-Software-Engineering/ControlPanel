@@ -1,0 +1,71 @@
+﻿@page
+@model ControlPanel.Pages.People.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Person</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @* username *@
+            <div class="form-group">
+                <label asp-for="Person.Username" class="control-label"></label>
+                <input asp-for="Person.Username" class="form-control" />
+                <span asp-validation-for="Person.Username" class="text-danger"></span>
+            </div>
+            @* name *@
+            <div class="form-group">
+                <label asp-for="Person.Name" class="control-label"></label>
+                <input asp-for="Person.Name" class="form-control" />
+                <span asp-validation-for="Person.Name" class="text-danger"></span>
+            </div>
+            @* sex *@
+            <div class="form-group">
+                <label asp-for="Person.Sex" class="control-label"></label>
+                <input asp-for="Person.Sex" class="form-control" />
+                <span asp-validation-for="Person.Sex" class="text-danger"></span>
+            </div>
+            @* idcard *@
+            <div class="form-group">
+                <label asp-for="Person.IdentityCardNumber" class="control-label"></label>
+                <input asp-for="Person.IdentityCardNumber" class="form-control" />
+                <span asp-validation-for="Person.IdentityCardNumber" class="text-danger"></span>
+            </div>
+            @* status *@
+            <div class="form-group">
+                <label asp-for="Person.Status" class="control-label"></label>
+                <input asp-for="Person.Status" class="form-control" />
+                <span asp-validation-for="Person.Status" class="text-danger"></span>
+            </div>
+            @* phone *@
+            <div class="form-group">
+                <label asp-for="Person.PhoneNumber" class="control-label"></label>
+                <input asp-for="Person.PhoneNumber" class="form-control" />
+                <span asp-validation-for="Person.PhoneNumber" class="text-danger"></span>
+            </div>
+            @* email *@
+            <div class="form-group">
+                <label asp-for="Person.Email" class="control-label"></label>
+                <input asp-for="Person.Email" class="form-control" />
+                <span asp-validation-for="Person.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
