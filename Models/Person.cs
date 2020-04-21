@@ -13,7 +13,7 @@ namespace ControlPanel.Models
         [Required]
         public string Name { get; set; }
         [Required]
-        public string Sex { get; set; }
+        public string Gender { get; set; }
         [Required]
         public string IdentityCardNumber { get; set; }
         // __2nd__

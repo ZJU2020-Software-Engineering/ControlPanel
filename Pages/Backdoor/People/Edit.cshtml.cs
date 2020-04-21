@@ -54,7 +54,7 @@ namespace ControlPanel.Pages.People
             if (await TryUpdateModelAsync<Person>(
                 personToUpdate,
                 "person",
-                s => s.Username, s => s.Name, s => s.Sex, s => s.IdentityCardNumber,
+                s => s.Username, s => s.Name, s => s.Gender, s => s.IdentityCardNumber,
                 s => s.Status,s => s.PhoneNumber, s => s.Email))
             {
                 

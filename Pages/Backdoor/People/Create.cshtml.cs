@@ -38,7 +38,7 @@ namespace ControlPanel.Pages.People
             if (await TryUpdateModelAsync<Person>(
                 emptyPerson,
                 "person",   // Prefix for form value.
-                s => s.Username, s => s.Name, s => s.Sex, s => s.IdentityCardNumber,
+                s => s.Username, s => s.Name, s => s.Gender, s => s.IdentityCardNumber,
                 s => s.Status,s => s.PhoneNumber, s => s.Email))
             {
                 emptyPerson.CreationTime = DateTime.Now;
