@@ -35,8 +35,10 @@ namespace ControlPanel.Models
         [StringLength(50)]
         public string Email { get; set; }
         // [Required]
+        [DataType(DataType.Date)]
         public DateTime UpdateTime { get; set; }  // program generated
         // [Required]
+        [DataType(DataType.Date)]
         public DateTime CreationTime { get; set; }  // program generated
         [Required]
         [Column(TypeName = "varchar(30)")]
