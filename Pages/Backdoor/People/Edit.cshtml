@@ -49,6 +49,42 @@
                 <label asp-for="Person.Email" class="control-label"></label>
                 <input asp-for="Person.Email" class="form-control" />
                 <span asp-validation-for="Person.Email" class="text-danger"></span>
+            @* password *@
+            <div class="form-group">
+                <label asp-for="Person.Password" class="control-label"></label>
+                <input asp-for="Person.Password" class="form-control" />
+                <span asp-validation-for="Person.Password" class="text-danger"></span>
+            </div>
+            @* HealthStatus *@
+            <div class="form-group">
+                <label asp-for="Person.HealthStatus" class="control-label"></label>
+                <input asp-for="Person.HealthStatus" class="form-control" />
+                <span asp-validation-for="Person.HealthStatus" class="text-danger"></span>
+            </div>
+            @* HealthCode *@
+            <div class="form-group">
+                <label asp-for="Person.HealthCode" class="control-label"></label>
+                <input asp-for="Person.HealthCode" class="form-control" />
+                <span asp-validation-for="Person.HealthCode" class="text-danger"></span>
+            </div>
+            @* Visitedplaces *@
+            <div class="form-group">
+                <label asp-for="Person.Visitedplaces" class="control-label"></label>
+                <input asp-for="Person.Visitedplaces" class="form-control" />
+                <span asp-validation-for="Person.Visitedplaces" class="text-danger"></span>
+            </div>
+            @* PaymentInformation *@
+            <div class="form-group">
+                <label asp-for="Person.PaymentInformation" class="control-label"></label>
+                <input asp-for="Person.PaymentInformation" class="form-control" />
+                <span asp-validation-for="Person.PaymentInformation" class="text-danger"></span>
+            </div>
+            @* PersonalCenterLink *@
+            <div class="form-group">
+                <label asp-for="Person.PersonalCenterLink" class="control-label"></label>
+                <input asp-for="Person.PersonalCenterLink" class="form-control" />
+                <span asp-validation-for="Person.PersonalCenterLink" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
