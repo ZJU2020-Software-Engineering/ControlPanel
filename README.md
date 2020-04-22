@@ -2,6 +2,10 @@
 
 Control panel for in-class project
 
+## Screenshot
+
+![](img/Screenshot.1.png)
+
 ## Build
 
 First make sure you have downloaded [SDK](https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-3.1.201-windows-x64-installer).
