@@ -55,6 +55,12 @@
                 <input asp-for="Person.Password" class="form-control" />
                 <span asp-validation-for="Person.Password" class="text-danger"></span>
             </div>
+            @* Address *@
+            <div class="form-group">
+                <label asp-for="Person.Address" class="control-label"></label>
+                <input asp-for="Person.Address" class="form-control" />
+                <span asp-validation-for="Person.Address" class="text-danger"></span>
+            </div>
             @* HealthStatus *@
             <div class="form-group">
                 <label asp-for="Person.HealthStatus" class="control-label"></label>

@@ -44,6 +44,10 @@ namespace ControlPanel.Models
         public string Password { get; set; }
         // __3rd__ this part might change
         [Required]
+        [Column(TypeName = "varchar(50)")]
+        [StringLength(50)]
+        public string Address { get; set; }
+        [Required]
         [Column(TypeName = "varchar(20)")]
         [StringLength(20)]
         public string HealthStatus { get; set; }

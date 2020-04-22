@@ -56,7 +56,7 @@ namespace ControlPanel.Pages.People
                 "person",
                 s => s.Username, s => s.Name, s => s.Gender, s => s.IdentityCardNumber,
                 s => s.Status, s => s.PhoneNumber, s => s.Email, s => s.Password,
-                s => s.HealthStatus, s => s.HealthCode, s => s.Visitedplaces,
+                s => s.Address, s => s.HealthStatus, s => s.HealthCode, s => s.Visitedplaces,
                 s => s.PaymentInformation, s => s.PersonalCenterLink))
             {
                 
