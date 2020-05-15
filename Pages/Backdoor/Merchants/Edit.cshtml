@@ -1,0 +1,84 @@
+﻿@page
+@model ControlPanel.Pages.Merchants.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Merchant</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Merchant.Username" />
+            @* password *@
+            <div class="form-group">
+                <label asp-for="Merchant.Password" class="control-label"></label>
+                <input asp-for="Merchant.Password" class="form-control" />
+                <span asp-validation-for="Merchant.Password" class="text-danger"></span>
+            </div>
+            @* name *@
+            <div class="form-group">
+                <label asp-for="Merchant.Name" class="control-label"></label>
+                <input asp-for="Merchant.Name" class="form-control" />
+                <span asp-validation-for="Merchant.Name" class="text-danger"></span>
+            </div>
+            @* address *@
+            <div class="form-group">
+                <label asp-for="Merchant.Address" class="control-label"></label>
+                <input asp-for="Merchant.Address" class="form-control" />
+                <span asp-validation-for="Merchant.Address" class="text-danger"></span>
+            </div>
+            @* business licence *@
+            <div class="form-group">
+                <label asp-for="Merchant.BusinessLicense" class="control-label"></label>
+                <input asp-for="Merchant.BusinessLicense" class="form-control" />
+                <span asp-validation-for="Merchant.BusinessLicense" class="text-danger"></span>
+            </div>
+            @* corporate identity *@
+            <div class="form-group">
+                <label asp-for="Merchant.CorporateIdentity" class="control-label"></label>
+                <input asp-for="Merchant.CorporateIdentity" class="form-control" />
+                <span asp-validation-for="Merchant.CorporateIdentity" class="text-danger"></span>
+            </div>
+            @* category *@
+            <div class="form-group">
+                <label asp-for="Merchant.Category" class="control-label"></label>
+                <input asp-for="Merchant.Category" class="form-control" />
+                <span asp-validation-for="Merchant.Category" class="text-danger"></span>
+            </div>
+            @* phone number *@
+            <div class="form-group">
+                <label asp-for="Merchant.PhoneNumber" class="control-label"></label>
+                <input asp-for="Merchant.PhoneNumber" class="form-control" />
+                <span asp-validation-for="Merchant.PhoneNumber" class="text-danger"></span>
+            </div>
+            @* email *@
+            <div class="form-group">
+                <label asp-for="Merchant.Email" class="control-label"></label>
+                <input asp-for="Merchant.Email" class="form-control" />
+                <span asp-validation-for="Merchant.Email" class="text-danger"></span>
+            </div>
+            @* collection info *@
+            <div class="form-group">
+                <label asp-for="Merchant.CollectionInformation" class="control-label"></label>
+                <input asp-for="Merchant.CollectionInformation" class="form-control" />
+                <span asp-validation-for="Merchant.CollectionInformation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

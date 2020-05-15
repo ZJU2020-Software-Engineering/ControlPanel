@@ -11,12 +11,18 @@ namespace ControlPanel.Data
         }
 
         public DbSet<Person> PersonalUserInfo { get; set; }
+        public DbSet<Merchant> MerchantUserInfo { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Person>(entity =>
+            {
+                // entity.HasKey(e => e.Uid);
+                // entity.Property(e => e.Title).IsRequired();
+            });
+            modelBuilder.Entity<Merchant>(entity =>
             {
                 // entity.HasKey(e => e.Uid);
                 // entity.Property(e => e.Title).IsRequired();

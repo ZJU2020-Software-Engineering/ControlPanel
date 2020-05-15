@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ControlPanel.Pages.People
+namespace ControlPanel.Pages.Merchants
 {
     public class IndexModel : PageModel
     {
@@ -24,7 +24,7 @@ namespace ControlPanel.Pages.People
         public string CurrentFilter { get; set; }
         public string CurrentSort { get; set; }
 
-        public PaginatedList<Person> People { get; set; }
+        public PaginatedList<Merchant> Merchants { get; set; }
 
         public async Task OnGetAsync(string sortOrder,
             string currentFilter, string searchString, int? pageIndex)
@@ -43,32 +43,27 @@ namespace ControlPanel.Pages.People
 
             CurrentFilter = searchString;
 
-            IQueryable<Person> peopleIQ = from s in _context.PersonalUserInfo
+            IQueryable<Merchant> merchantsIQ = from s in _context.MerchantUserInfo
                                             select s;
             if (!String.IsNullOrEmpty(searchString))
             {
-                peopleIQ = peopleIQ.Where(s => s.Name.Contains(searchString)
-                                       || s.IdentityCardNumber.Contains(searchString));
+                merchantsIQ = merchantsIQ.Where(s => s.Name.Contains(searchString)
+                                       || s.Username.Contains(searchString)
+                                       || s.PhoneNumber.Contains(searchString));
             }
             switch (sortOrder)
             {
                 case "name_desc":
-                    peopleIQ = peopleIQ.OrderByDescending(s => s.Name);
-                    break;
-                case "Date":
-                    peopleIQ = peopleIQ.OrderBy(s => s.UpdateTime);
-                    break;
-                case "date_desc":
-                    peopleIQ = peopleIQ.OrderByDescending(s => s.UpdateTime);
+                    merchantsIQ = merchantsIQ.OrderByDescending(s => s.Name);
                     break;
                 default:
-                    peopleIQ = peopleIQ.OrderBy(s => s.Name);
+                    merchantsIQ = merchantsIQ.OrderBy(s => s.Name);
                     break;
             }
 
             int pageSize = 9;
-            People = await PaginatedList<Person>.CreateAsync(
-                peopleIQ.AsNoTracking(), pageIndex ?? 1, pageSize);
+            Merchants = await PaginatedList<Merchant>.CreateAsync(
+                merchantsIQ.AsNoTracking(), pageIndex ?? 1, pageSize);
         }
     }
 }

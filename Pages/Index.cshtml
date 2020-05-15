@@ -6,20 +6,14 @@
 <div>
     @Model.Message
 </div>
-<form method="post">
-    <div class="form-group">
-        <label asp-for="UserName" class="col-form-label col-md-2"></label>
-        <div class="col-md-10">
-            <input asp-for="UserName" />
-        </div>
-    </div>
-    <div class="form-group">
-        <label asp-for="Password" class="col-form-label col-md-2"></label>
-        <div class="col-md-10">
-            <input asp-for="Password" />
-        </div>
-    </div>
-    <div class="form-group">
-        <button class="btn btn-outline-primary btn-sm">Log in</button>
-    </div>
-</form>
+<div class="d-flex justify-content-center text-center">
+    <form class="form-signin" method="post">
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <label for="inputEmail" asp-for="UserName" class="sr-only">Username</label>
+        <input asp-for="UserName" type="username" id="inputEmail" class="form-control" placeholder="Username" required="" autofocus="">
+        <label for="inputPassword" asp-for="Password" class="sr-only">Password</label>
+        <input asp-for="Password" type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <p class="mt-5 mb-3 text-muted">Basic Information Group</p>
+    </form>
+</div>
