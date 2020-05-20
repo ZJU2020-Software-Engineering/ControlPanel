@@ -41,6 +41,7 @@ namespace ControlPanel.Pages.Merchants
                 s => s.BusinessLicense, s => s.CorporateIdentity, s => s.Category,
                 s => s.PhoneNumber, s => s.Email, s => s.CollectionInformation))
             {
+                emptyMerchant.Password = BCrypt.Net.BCrypt.HashPassword(emptyMerchant.Password);
                 _context.MerchantUserInfo.Add(emptyMerchant);
                 await _context.SaveChangesAsync();
                 return RedirectToPage("./Index");

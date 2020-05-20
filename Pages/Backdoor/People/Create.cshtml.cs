@@ -43,6 +43,7 @@ namespace ControlPanel.Pages.People
                 s => s.Address, s => s.HealthStatus, s => s.HealthCode, s => s.Visitedplaces,
                 s => s.PaymentInformation, s => s.PersonalCenterLink))
             {
+                emptyPerson.Password = BCrypt.Net.BCrypt.HashPassword(emptyPerson.Password);
                 emptyPerson.CreationTime = DateTime.Now;
                 emptyPerson.UpdateTime = DateTime.Now;
                 _context.PersonalUserInfo.Add(emptyPerson);

@@ -11,8 +11,8 @@ namespace ControlPanel.Models
         [StringLength(20)]
         public string Username { get; set; }
         [Required]
-        [Column(TypeName = "varchar(20)")]
-        [StringLength(20)]
+        [Column(TypeName = "varchar(100)")]
+        [StringLength(100)]
         public string Password { get; set; }
         [Required]
         [Column(TypeName = "varchar(20)")]

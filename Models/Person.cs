@@ -41,8 +41,8 @@ namespace ControlPanel.Models
         [DataType(DataType.Date)]
         public DateTime? CreationTime { get; set; }  // program generated
         [Required]
-        [Column(TypeName = "varchar(30)")]
-        [StringLength(30)]
+        [Column(TypeName = "varchar(100)")]
+        [StringLength(100)]
         public string Password { get; set; }
         // __3rd__ this part might change
         [Required]
